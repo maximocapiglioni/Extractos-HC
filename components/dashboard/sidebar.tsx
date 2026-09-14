@@ -27,7 +27,8 @@ export function Sidebar({ userEmail, onNavigate, className }: SidebarProps) {
       setIsLoggingOut(true);
       const supabase = createClient();
       await supabase.auth.signOut();
-      router.push("/auth/login");
+      router.replace("/auth/login");
+      router.refresh();
     } finally {
       setIsLoggingOut(false);
     }
