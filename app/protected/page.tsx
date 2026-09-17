@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -114,16 +115,16 @@ export default function ProtectedPage() {
 
             <Button
               variant="outline"
-              disabled
-              className="w-full justify-between font-normal text-sm h-10 border-border/70 opacity-60 cursor-not-allowed select-none"
+              asChild
+              className="w-full justify-between font-normal text-sm h-10 border-border/70"
             >
-              <div className="flex items-center gap-2.5">
-                <Search className="h-4 w-4 text-muted-foreground" />
-                <span>Buscar perfume</span>
-              </div>
-              <span className="rounded bg-muted/80 px-1.5 py-0.5 text-[10px] font-normal text-muted-foreground">
-                Próx.
-              </span>
+              <Link href="/protected/perfumes">
+                <div className="flex items-center gap-2.5">
+                  <Search className="h-4 w-4 text-muted-foreground" />
+                  <span>Buscar perfume</span>
+                </div>
+                <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
+              </Link>
             </Button>
 
             <Button

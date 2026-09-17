@@ -28,7 +28,7 @@ export const NAV_ITEMS: NavItem[] = [
     title: "Perfumes",
     href: "/protected/perfumes",
     icon: SprayCan,
-    isAvailable: false,
+    isAvailable: true,
   },
   {
     title: "Stock",
